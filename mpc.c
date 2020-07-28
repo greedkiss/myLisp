@@ -89,7 +89,16 @@ static mpc_input_t * mpc_input_new_string(const char * filename, const char * st
   return i;
 } 
 
-static mpc_input_t * mpc_input_new_string(const char * filename, const char * string, size_t length){
+static mpc_input_t * mpc_input_new_nstring(const char * filename, const char * string, size_t length){
+  mpc_input_t * i = malloc(sizeof(mpc_input_t));
+
+  i->filename = malloc(strlen(filename) + 1);
+  strcpy(i->filename, filename);
+  i->type = MPC_INPUT_STRING;
+
+  i->state = mpc_state_new();
+
   
+
 
 }
